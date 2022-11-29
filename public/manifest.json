@@ -1,0 +1,16 @@
+{
+  "short_name": "store",
+  "name": "store for practice",
+  "icons": [
+    {
+      "src": "favicon.png",
+      "sizes": "69x65",
+      "type": "image/png",
+      "porpuse": "maskable"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#5aceff",
+  "background_color": "#ffffff"
+}

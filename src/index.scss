@@ -1,0 +1,529 @@
+body {
+    font-family: monospace,-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Oxygen', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    min-height: 100vh;
+}
+*{
+    font-size: 24px;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+  
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+      monospace;
+}
+#root{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 100vh;
+}
+
+.centered-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.c-column{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center
+}
+
+
+.layout{
+    @extend .c-column;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.margin-bottom-5{
+    margin-bottom: 5em;
+}
+
+.nav-bar{
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background-color: rgb(85, 191, 245);
+    
+    .container-list, ul{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        list-style: none;
+
+        height: 3em;
+        
+        .item-list , li{
+            cursor: pointer;
+            width: 100%;
+            height: 100%;
+
+            @extend .centered-container;
+            justify-content: center;
+            
+            transition: background .1s ease;
+
+            a{
+                color: rgb(255, 255, 255);
+                text-decoration: none;
+                width: 100%;
+                height: 100%;
+
+                @extend .centered-container;
+            justify-content: center;
+
+            }
+        }
+
+        .item-list:hover, li:hover{
+            background-color: rgb(36, 35, 34);
+        }
+    }
+}
+
+.container{
+    text-align: center;
+    @extend .centered-container;
+
+    width: 100%;
+    height: 100%;
+}
+
+.footer-page{
+    @extend .centered-container;
+    @extend .layout;
+    background-color: rgb(210, 210, 210);
+    padding: 1em;
+}
+
+
+
+.contador{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+
+
+    .header{
+        grid-area: 1 / 1 / 2 / 2;
+        padding: 2em;
+    }
+    .controls{
+        grid-area: 2 / 1 / 3 / 2;
+        padding: 2em;
+    }
+}
+
+.btn{
+    cursor: pointer;
+    outline: none;
+    border: none;
+    border-radius: none;
+    font-weight: 600;
+    padding: 1em;
+    filter: blur(1.2);
+    transition: transform ease 0.1s;
+}
+.btn:hover{
+    filter: blur(1) brightness(2);
+}
+.btn:active{
+    transform: scale(0.9);
+    filter: brightness(0.8);
+}
+.btn_up:active{
+    transform: scale(1.1);
+    filter: brightness(1.5);
+}
+.btn_red{
+    background-color: red;
+}
+.btn_green{
+    background-color: rgb(30, 209, 30);
+}
+.shadow_left_bottom{
+    box-shadow: 0.2em 0.2em black;
+}
+.shadow_left_bottom:active{
+    box-shadow: 0 0 black;
+}
+.shadow_right_bottom{
+    box-shadow: -0.2em 0.2em black;
+}
+.shadow_right_bottom:active{
+    box-shadow: 0 0 black;
+}
+
+.title{
+    padding: 1em;
+}
+
+.panel-productos{
+    width: 100%;
+    height: 100%;
+    max-width: 80em;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    
+
+    .product-item{
+        width: 100%;
+        max-width: 30em;
+        border: 0.1em solid rgba(0, 0, 0, 0.5);
+        border-radius: 0.1em;
+        display: flex;
+        margin: 0.1em;
+
+        .product-img{
+            width: 4em;
+            height: 4em;
+
+            img{
+                width: 100%;
+                height: 100%;
+                padding: 0.5em;
+                object-fit: contain;
+            }
+        }
+
+        .product-info{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            .product-name{
+                margin-top: 0.5em;
+            }
+        }
+
+        .product-buttons{
+            width: 15%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+}
+
+.button-items{
+    cursor: pointer;
+    padding: 0 0.2rem;
+}
+.button-success{
+    background-color: rgb(0, 255, 0);
+}
+.button-failure{
+    background-color: rgb(245, 25, 25);
+}
+.button-items:active{
+    filter: grayscale(1.5);
+}
+
+
+.car-store{
+    cursor: pointer;
+    position: absolute;
+    bottom: 1em;
+    right: 1em;
+    z-index: 2;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+    background-color: rgb(0, 179, 255);
+    
+    .icon{
+        border-radius: 50%;
+        font-size: 2em;
+        padding: 0.2em;
+    }
+    .counter{
+        position: absolute;
+        bottom: 0;
+        right: 0.5em;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 1em;
+        height: 1em;
+
+        border-radius: 50%;
+        background-color: rgb(255, 255, 255);
+        font-family: Arial, Helvetica, sans-serif;
+    }
+}
+.car-store:hover .icon{
+    opacity: 1;
+    overflow: hidden;
+    transform: translateX(0);
+    animation: move_left 3s 3 linear;
+}
+@keyframes move_left {
+    0%{
+        transform: translateX(0) rotate(0deg);
+        opacity: 1;
+    }
+    15%{
+        transform: translateX(-0.5em) rotate(30deg);
+        opacity: 0;
+    }
+    16%{
+        transform: translateX(0.5em);
+    }
+    30%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+.car-store:hover .counter{
+    animation: move_body 1s 1s 3;
+}
+@keyframes move_body {
+    10%{
+        transform: rotate(-15deg);
+    }
+    30%{
+        transform: rotate(30deg);
+    }
+    70%{
+        transform: rotate(-15deg);
+    }
+    75%{
+        transform: rotate(0deg);
+    }
+}  
+
+.clear-panel{
+    position: absolute;
+
+    width: 100vw;
+    height: 107vh;
+    top: auto;
+    left: auto;
+    bottom: -1em;
+    right: -0em;
+
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 3;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    opacity: 0;
+    animation: show-panel 0.25s forwards;
+
+    @media screen and (min-width:61.1em){
+        right: -0.2em;
+
+    }
+
+    .clear-div{
+        width: 90%;
+        background-color: rgb(255, 255, 255);
+        padding: 1em;
+
+        @media screen and (min-width:35em){
+            width: 50%;
+        }
+        
+    }
+}
+.buttons{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    button{
+        margin: 0.2em;
+        padding: 0.2em;
+        cursor: pointer;
+    }
+}
+.panel-right{
+    justify-content: flex-end;
+}
+
+
+.volar-container{
+    width: 1px;
+    height: 1px;
+    display: inline;
+    margin-left: 99%;
+
+    position: sticky;
+    top: 90%;
+    bottom: 1px;
+    right: 1px;
+}
+
+.panel-car-items{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    position: absolute;
+
+    width: 90vw;
+    height: 90vh;
+    top: auto;
+    left: auto;
+    bottom: 2em;
+    right: 0.5em;
+
+    background-color: rgb(255, 255, 255);
+    border: 0.2em solid black;
+    border-radius: 0.5em;
+    animation: show-panel .25s forwards;
+
+    @media screen and (min-width:35em) {
+        width: 15em;
+        max-height: 25em;
+        top: auto;
+        left: auto;
+        bottom: 1.5em;
+        right: 0.7em;
+    }
+
+    .clear-car-button{
+        cursor: pointer;
+        position: absolute;
+        left: -1em;
+        top: -0.5em;
+        padding: 0.2em;
+        border-radius: 0.2em;
+        color: red;
+        border: 0.2em solid red;
+        background-color: rgb(255, 255, 255);
+    }
+    .clear-car-button:active{
+        color: black;
+        background-color: rgb(174, 174, 174);
+    }
+
+    .close-button{
+        flex: 1;
+        border: 0.2em solid black;
+
+        cursor: pointer;
+        position: absolute;
+        top: -0.5em;
+        right: -0.5em;
+        border-radius: 50%;
+        border: 0.1em solid black;
+        background-color: rgb(250, 43, 43);
+        width: 2rem;
+        font-size: 1.5rem;
+        font-weight: bolder;
+        transition: all 0.25s ease;
+    }
+    .close-button:active{
+        background-color: rgb(162, 4, 4);
+    }
+
+    .car-title{
+        padding: 0.7em 0;
+    }
+
+    .car-items{
+        flex: 1;
+        width: 100%;
+        border: 0.2em solid black;
+        overflow-y: auto;
+
+        ul{
+            list-style-type: none;
+
+            li.car-item{
+                display: flex;
+                margin: 0.2em;
+                margin-bottom: 0.4em;
+                border-bottom: 0.1em solid gray;
+
+                .car-item-info{
+                    width: 100%;
+
+                    .buttons{
+                        display: flex;
+                        *{
+                            margin-left: 1em;
+                        }
+                    }
+                }
+
+                .car-item-controls{
+                    width: 15%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    button{
+                        cursor: pointer;
+                    }
+                    img{
+                        width: 1em;
+                        height: 1em;
+                    }
+                }
+            }
+
+            
+        }
+    }
+
+    .panel-controls{
+        width: 100%;
+        height: 16.5%;
+
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+
+        .sendAndPay-button{
+            cursor: pointer;
+            background-color: rgb(2, 255, 2);
+            outline: none;
+            border-radius: 0.2em;
+            margin-left: 1em;
+            padding: 0.5em;
+            font-weight: bolder;
+            box-shadow: -0.1em 0.1em rgb(0, 0, 0);
+            transition: all 0.25 ease;
+        }
+        .sendAndPay-button:active{
+            transform: translate(-0.1em, 0.1em);
+            box-shadow: none;
+        }
+    }
+    
+}
+@keyframes show-panel {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}

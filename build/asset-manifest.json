@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/static/css/main.c79f144a.css",
+    "main.js": "/static/js/main.2d61b990.js",
+    "static/media/halo-4.jpg": "/static/media/halo-4.b4399bfe222faa43f368.jpg",
+    "static/media/bookshell.png": "/static/media/bookshell.d594650fa33764bb9a75.png",
+    "static/media/costume-space.png": "/static/media/costume-space.888aaaf3d33e9b5fcd24.png",
+    "static/media/eeuu.png": "/static/media/eeuu.e926a47c8090a6b9c494.png",
+    "index.html": "/index.html",
+    "main.c79f144a.css.map": "/static/css/main.c79f144a.css.map",
+    "main.2d61b990.js.map": "/static/js/main.2d61b990.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c79f144a.css",
+    "static/js/main.2d61b990.js"
+  ]
+}
